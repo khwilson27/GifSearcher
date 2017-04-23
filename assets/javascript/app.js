@@ -1,9 +1,21 @@
 $(document).ready(function() {
 
-	// creates a button
+	// initial buttons
+	var topics = ['australian shepherd', 'corgi', 'poodle', 'shiba inu', 'malamute', 'samoyed', 'mountain dog'];
+
+	// creates and appends a button
 	var createBtn = function(word) {
 		$("<button>").attr("type", "button").addClass("btn btn-info gifBtn").text(word).appendTo($(".buttonDump"))
 	};
+
+	// create a button for each item in the topics array
+	var topicBtn = function() {
+		for (var i = 0; i < topics.length; i++) {
+			createBtn(topics[i]);
+		}
+	};
+
+	topicBtn();
 
 	// takes user input from form and creates a button with that word
 	$("#searchBtn").on("click", function(){
@@ -56,14 +68,22 @@ $(document).ready(function() {
 		          $("#imgDump").prepend(newDiv);
 	     	  }
       	});
-
-
 	});
 
+	// toggles gif from between still and animated
+	$("#imgDump").on("click", ".gifImg", function(){
 
+		var status = $(this).data("status");
 
-
-	
+		if (status == "still") {
+			$(this).data("status", "animated");
+			$(this).attr("src", $(this).data("urlAnimate"));
+		} else {
+			$(this).data("status", "still");
+			$(this).attr("src", $(this).data("urlStill"));
+		}
+		
+	});
 
 
 
