@@ -36,7 +36,7 @@ $(document).ready(function() {
 	        	"api_key": "dc6zaTOxFJmzC",
 	          	"q": searchTerm,
 	          	"limit": limit,
-	          	"rating": "g"
+	          	"rating": "pg-13"
 	        }
         }).done(function(result) {
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		          	  newImg.data("status", "still").data("urlStill", urlStill).data("urlAnimate", urlAnimate).appendTo(newDiv);
 		          var newRatingP = $("<p>").addClass("rating").text("rating: " + rating).appendTo(newDiv);
 
-		          $("#imgDump").append(newDiv);
+		          $("#imgDump").prepend(newDiv);
 	     	  }
       	});
 

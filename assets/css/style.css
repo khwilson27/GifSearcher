@@ -30,9 +30,6 @@ body {
 
 .gifDiv {
 	float: left;
-	border-style: solid;
-	border-color: white;
-	border-width: 1px;
 	margin: 4px;
 }
 
