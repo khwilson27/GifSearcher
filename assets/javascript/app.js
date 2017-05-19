@@ -39,7 +39,7 @@ $(document).ready(function() {
 	$(".buttonDump").on("click", ".gifBtn", function(){
 		var limit = "10";
 		var searchTerm = $(this).text();
-		var url = "http://api.giphy.com/v1/gifs/search?";
+		var url = "https://api.giphy.com/v1/gifs/search?";
 
         $.ajax({
 	        url: url,
